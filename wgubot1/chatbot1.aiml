@@ -1,0 +1,263 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<aiml>
+    
+    
+
+
+
+<!-- Quiz Greeting -->
+
+<category>
+    <pattern>QUIZ</pattern>
+    <template>
+        
+        Hello, you will be asked about your preferences in order to determine 
+        the career that best suits you.
+        <split></split>
+        Would you like to continue?
+        
+        <button>
+            <text>Yes!</text>
+            <postback>YES</postback>
+        </button>
+        
+        <button>
+            <text>No</text>
+            <postback>NO</postback>
+        </button>
+        
+        </template>
+</category>
+
+<!-- Quiz Start -->
+
+<category>
+    <pattern>YES</pattern>
+    <template>
+        
+        Do you like writing code?
+        
+        <button>
+            <text>Yes</text>
+            <postback>CODEYES</postback>
+        </button>
+        
+        <button>
+            <text>No</text>
+            <postback>CODENO</postback>
+        </button>
+        
+    </template>
+</category>
+
+<!-- Coding Yes -->
+
+<category>
+    <pattern>CODEYES</pattern>
+    <template>
+        
+        Which trait would you consider one of your strengths?
+        
+        <button>
+            <text>Creativity</text>
+            <postback>CREATE</postback>
+        </button>
+        
+        <button>
+            <text>Attention to detail</text>
+            <postback>DETAIL</postback>
+        </button>
+        
+    </template>
+</category>
+
+<!-- Software Developer -->
+
+<category>
+    <pattern>CREATE</pattern>
+    <template>
+        
+        You should look into becoming a 
+        
+        <link>
+            <text>Software Developer!</text>
+            <url>https://www.indeed.com/hire/job-description/software-developer</url>
+        </link>
+        
+        <button>
+            <text>Take quiz again</text>
+            <postback>YES</postback>
+        </button>
+        
+        <button>
+            <text>Done</text>
+            <postback>NO</postback>
+        </button>
+        
+    </template>
+</category>
+
+
+<!-- Data Analyst -->
+
+<category>
+    <pattern>DETAIL</pattern>
+    <template>
+        
+        You should look into becoming a 
+        
+        <link>
+            <text>Data Analyst!</text>
+            <url>https://www.indeed.com/hire/job-description/data-analyst</url>
+        </link>
+        
+        <button>
+            <text>Take quiz again</text>
+            <postback>YES</postback>
+        </button>
+        
+        <button>
+            <text>Done</text>
+            <postback>NO</postback>
+        </button>
+        
+    </template>
+</category>
+
+
+<!-- Coding No -->
+
+<category>
+    <pattern>CODENO</pattern>
+    <template>
+        
+        Which trait would you consider one of your strengths?
+        
+        <button>
+            <text>Attention to Detail</text>
+            <postback>ATTEND</postback>
+        </button>
+        
+        <button>
+            <text>Communication</text>
+            <postback>COMMUNICATE</postback>
+        </button>
+        
+    </template>
+</category>
+
+
+<!-- Attention to Detail -->
+
+<category>
+    <pattern>ATTEND</pattern>
+    <template>
+        
+        Which would you rather do?
+        
+        <button> 
+            <text>Store and manage data</text>
+            <postback>DATABASE</postback>
+        </button>
+        
+        <button>
+            <text>Manage and troubleshoot networks</text>
+            <postback>NETWORK</postback>
+        </button>
+        
+    </template>
+</category>
+
+
+<!-- Database Administrator -->
+
+<category>
+    <pattern>DATABASE</pattern>
+    <template>
+        
+        You should look into becoming a 
+        
+        <link>
+            <text>Database Administrator!</text>
+            <url>https://www.indeed.com/hire/job-description/database-administrator</url>
+        </link>
+        
+        <button>
+            <text>Take quiz again</text>
+            <postback>YES</postback>
+        </button>
+        
+        <button>
+            <text>Done</text>
+            <postback>NO</postback>
+        </button>
+        
+    </template>
+</category>
+
+
+<!-- Network Administrator -->
+
+<category>
+    <pattern>NETWORK</pattern>
+    <template>
+        
+        You should look into becoming a 
+        
+        <link>
+            <text>Network Administrator!</text>
+            <url>https://www.indeed.com/hire/job-description/network-administrator</url>
+        </link>
+        
+        <button>
+            <text>Take quiz again</text>
+            <postback>YES</postback>
+        </button>
+        
+        <button>
+            <text>Done</text>
+            <postback>NO</postback>
+        </button>
+        
+    </template>
+</category>
+
+
+<!-- IT Manager -->
+
+<category>
+    <pattern>COMMUNICATE</pattern>
+    <template>
+        
+        You should look into becoming an
+        
+        <link>
+            <text>Information Technology Manager!</text>
+            <url>https://www.indeed.com/hire/job-description/it-manager</url>
+        </link>
+        
+        <button>
+            <text>Take quiz again</text>
+            <postback>YES</postback>
+        </button>
+        
+        <button>
+            <text>Done</text>
+            <postback>NO</postback>
+        </button>
+        
+    </template>
+</category>
+
+<!-- End of Quiz -->
+
+<category>
+    <pattern>*</pattern>
+    <template><srai>QUIZ</srai></template>
+</category>
+
+<category>
+    <pattern>NO</pattern>
+    <template>Good Bye!</template>
+</category>
+</aiml>
